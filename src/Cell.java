@@ -16,13 +16,13 @@ public class Cell extends Rectangle {
 
     // methods
     public void paint(Graphics g, Point mousePos) {
-        if (mousePos != null && this.contains(mousePos)) {
+        if (mousePos != null && super.contains(mousePos)) {
             g.setColor(Color.GRAY);
         } else {
             g.setColor(Color.WHITE);
         }
-        g.fillRect((int) this.getX(), (int) this.getY(), (int) this.getWidth(), (int) this.getHeight());
+        g.fillRect((int) getX(), (int) getY(), (int) getWidth(), (int) getHeight());
         g.setColor(Color.BLACK);
-        g.drawRect((int) this.getX(), (int) this.getY(), (int) this.getWidth(), (int) this.getHeight());
+        g.drawRect((int) getX(), (int) getY(), (int) getWidth(), (int) getHeight());
     }
 }
