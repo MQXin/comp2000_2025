@@ -4,28 +4,25 @@ import java.awt.Point;
 import java.awt.Rectangle;
 
 public class Cell extends Rectangle {
-  static int size = 35;
+    // fields
+    int x;
+    int y;
+    static int size = 35;
 
-  public Cell(int x, int y) {
-    super(x, y, size, size);
-  }
-
-  public void paint(Graphics g, Point mousePos) {
-    if(contains(mousePos)) {
-      g.setColor(Color.GRAY);
-    } else {
-      g.setColor(Color.WHITE);
+    // constructors
+    public Cell(int inX, int inY) {
+        super(inX, inY, size, size);
     }
-    g.fillRect(x, y, size, size);
-    g.setColor(Color.BLACK);
-    g.drawRect(x, y, size, size);
-  }
 
-  public boolean contains(Point p) {
-    if(p != null) {
-      return super.contains(p);
-    } else {
-      return false;
+    // methods
+    public void paint(Graphics g, Point mousePos) {
+        if (mousePos != null && super.contains(mousePos)) {
+            g.setColor(Color.GRAY);
+        } else {
+            g.setColor(Color.WHITE);
+        }
+        g.fillRect((int) getX(), (int) getY(), (int) getWidth(), (int) getHeight());
+        g.setColor(Color.BLACK);
+        g.drawRect((int) getX(), (int) getY(), (int) getWidth(), (int) getHeight());
     }
-  }
 }
