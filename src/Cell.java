@@ -5,8 +5,6 @@ import java.awt.Rectangle;
 
 public class Cell extends Rectangle {
     // fields
-    int x;
-    int y;
     static int size = 35;
 
     // constructors
@@ -16,13 +14,13 @@ public class Cell extends Rectangle {
 
     // methods
     public void paint(Graphics g, Point mousePos) {
-        if (mousePos != null && super.contains(mousePos)) {
+        if (mousePos != null && contains(mousePos)) {
             g.setColor(Color.GRAY);
         } else {
             g.setColor(Color.WHITE);
         }
-        g.fillRect((int) getX(), (int) getY(), (int) getWidth(), (int) getHeight());
+        g.fillRect(x, y, size, size);
         g.setColor(Color.BLACK);
-        g.drawRect((int) getX(), (int) getY(), (int) getWidth(), (int) getHeight());
+        g.drawRect(x, y, size, size);
     }
 }

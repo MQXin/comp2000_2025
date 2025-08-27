@@ -1,18 +1,23 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Polygon;
+import java.util.ArrayList;
 
-public class Actor {
+public abstract class Actor {
     Cell location;
-    Color color;
+    ArrayList<Polygon> shapes = new ArrayList<>();
 
     Actor(Cell cell, Color c) {
         location = cell;
-        color = c;
     }
 
     public void Paint(Graphics g) {
-        g.setColor(color);
-        g.fillRect((int) location.getX() + 5, (int) location.getY() + 5,
-                location.width - 10, location.height - 10);
+
+        if (shapes != null) {
+            for (int i = 0; i < shapes.size(); i++) {
+                g.drawPolygon(shapes.get(i));
+                g.fillPolygon(shapes.get(i));
+            }
+        }
     }
 }
