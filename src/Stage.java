@@ -9,6 +9,7 @@ public class Stage {
     Grid grid;
     List<Actor> actors;
 
+<<<<<<< HEAD
     public Stage() {
         grid = new Grid();
         actors = new ArrayList<Actor>();
@@ -16,6 +17,12 @@ public class Stage {
         actors.add(new Dog(grid.cellAtColRow(0, 15).get()));
         actors.add(new Bird(grid.cellAtColRow(12, 9).get()));
     }
+=======
+  public Stage() {
+    grid = new Grid();
+    actors = new ArrayList<Actor>();
+  }
+>>>>>>> f0b8e66ed0f0583134b6d300ccdb835389e71a92
 
     public void paint(Graphics g, Point mouseLoc) {
         grid.paint(g, mouseLoc);
