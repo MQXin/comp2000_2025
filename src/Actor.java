@@ -9,7 +9,7 @@ public abstract class Actor {
   List<Polygon> display;
 
   public void paint(Graphics g) {
-    for(Polygon p: display) {
+    for (Polygon p : display) {
       g.setColor(color);
       g.fillPolygon(p);
       g.setColor(Color.GRAY);
